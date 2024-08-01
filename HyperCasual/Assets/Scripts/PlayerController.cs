@@ -1,10 +1,14 @@
+using Cinemachine;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     private CharacterController controller;
     private Vector3 direction;
-    private Animator animator;
+    private Animator anim;
+
+
+    private int desiredLane = 1; // 0: sol, 1: orta, 2: sað
 
     [Header("Hýz Deðiþkenleri")]
     public float z_speed = 10f;
@@ -12,25 +16,38 @@ public class PlayerController : MonoBehaviour
     public float laneDistance = 3.0f; // Sað ve sol þeritler arasýndaki mesafe
     public float runCooldown = 5;
 
-    private int desiredLane = 1; // 0: sol, 1: orta, 2: sað
 
-    
+    [Header("Zemin Kontrol")]
+    [SerializeField]
+    private Transform groundCheck;
+    [SerializeField]
+    private float groundDistance = 0.3f;
+    [SerializeField]
+    private LayerMask groundMask;
+    [SerializeField]
+    private bool isGrounded = false;
+    public float jump = 5;
+    public float gravity = -9.7f;
+    private float verticalVelocity;
+
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
-        animator = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
 
     }
 
     void Update()
     {
         // Karakterin sürekli ileri hareket etmesini saðlama
-        
+
         // Karakter idle animasyonu
         if (runCooldown < Time.time)
         {
             direction.z = z_speed;
-            animator.SetBool("isRunning", true);
+            anim.SetBool("isRunning", true);
+
         }
 
         // Yol deðiþtirme
@@ -64,15 +81,40 @@ public class PlayerController : MonoBehaviour
         }
 
         // Karakteri hedef pozisyona doðru hareket ettirme
-        Vector3 moveDirection = Vector3.Lerp(transform.position, targetPosition, laneChangeSpeed * Time.deltaTime);      
+        Vector3 moveDirection = Vector3.Lerp(transform.position, targetPosition, laneChangeSpeed * Time.deltaTime);
         moveDirection.z = transform.position.z;
         controller.Move(moveDirection - transform.position);
+
+        // karakter zýplama
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        if (isGrounded && verticalVelocity < 0)
+        {
+            verticalVelocity = -2f; // Yere saðlam basmasýný saðlamak için küçük bir negatif deðer
+        }
+
+
+        if (isGrounded && Input.GetKeyDown(KeyCode.Space))
+        {
+            verticalVelocity = Mathf.Sqrt(jump * -2f * gravity);
+
+            JumpAnimation();
+        }
+        verticalVelocity += gravity * Time.deltaTime;
+        direction.y = verticalVelocity;
 
     }
 
     private void FixedUpdate()
     {
+
         // Hareket ettirme
         controller.Move(direction * Time.fixedDeltaTime);
+    }
+
+    public void JumpAnimation()
+    {
+        anim.SetInteger("JumpIndex", Random.Range(0, 3));
+        anim.SetTrigger("Jump");
+        
     }
 }
