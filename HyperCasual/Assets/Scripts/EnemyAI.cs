@@ -11,7 +11,7 @@ public class EnemyAI : MonoBehaviour
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        transform.rotation = Quaternion.identity;
+        
     }
 
     private void Update()
