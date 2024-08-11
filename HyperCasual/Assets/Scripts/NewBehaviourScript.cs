@@ -1,0 +1,21 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.AI;
+
+public class NewBehaviourScript : StateMachineBehaviour
+{
+    NavMeshAgent agent;
+    float speed;
+    public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        agent = animator.GetComponent<NavMeshAgent>();
+        speed = agent.speed;
+        agent.speed = 0.5f;
+    }
+
+    public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        agent.speed = speed;
+    }
+}

@@ -114,8 +114,7 @@ public class PlayerController : MonoBehaviour
     public void JumpAnimation()
     {
         anim.SetInteger("JumpIndex", Random.Range(0, 3));
-        anim.SetTrigger("Jump");
-        
+        anim.SetTrigger("Jump");        
     }
 
     
