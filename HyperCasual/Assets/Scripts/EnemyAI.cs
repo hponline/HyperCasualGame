@@ -43,7 +43,7 @@ public class EnemyAI : MonoBehaviour
 
     public void JumpAnimation()
     {
-        animator.SetInteger("JumpIndex", Random.Range(0, 3));
+        animator.SetInteger("JumpIndex", Random.Range(0, 4));
         animator.SetTrigger("Jump");
     }
 }

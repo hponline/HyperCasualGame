@@ -6,7 +6,8 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 public class FinishLine : MonoBehaviour
-{    
+{
+    
     PlayerController playerController;
     CinemachineVirtualCamera virtualCamera;
     public GameObject finishScreen;

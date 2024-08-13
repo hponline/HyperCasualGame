@@ -3,10 +3,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static string emir = "emir";
     private CharacterController controller;
     private Vector3 direction;
     private Animator anim;
-
+    CinemachineVirtualCamera cam;
 
     private int desiredLane = 1; // 0: sol, 1: orta, 2: sað
 
@@ -35,7 +36,7 @@ public class PlayerController : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
-
+        cam = GetComponent<CinemachineVirtualCamera>();
     }
 
     void Update()
@@ -98,10 +99,10 @@ public class PlayerController : MonoBehaviour
             verticalVelocity = Mathf.Sqrt(jump * -2f * gravity);
 
             JumpAnimation();
+            
         }
         verticalVelocity += gravity * Time.deltaTime;
         direction.y = verticalVelocity;
-
     }
 
     private void FixedUpdate()
@@ -113,8 +114,9 @@ public class PlayerController : MonoBehaviour
 
     public void JumpAnimation()
     {
-        anim.SetInteger("JumpIndex", Random.Range(0, 3));
-        anim.SetTrigger("Jump");        
+        anim.SetInteger("JumpIndex", Random.Range(0, 4));
+        anim.SetTrigger("Jump"); 
+        
     }
 
     
