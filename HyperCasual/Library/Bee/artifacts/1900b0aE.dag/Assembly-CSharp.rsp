@@ -375,6 +375,8 @@
 "Assets/Scripts/LevelManager.cs"
 "Assets/Scripts/MenuManager.cs"
 "Assets/Scripts/PlayerController.cs"
+"Assets/Scripts/ProgressBar.cs"
+"Assets/Scripts/Timer.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark02.cs"

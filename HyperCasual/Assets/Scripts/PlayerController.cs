@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public static string emir = "emir";
     private CharacterController controller;
     private Vector3 direction;
     private Animator anim;

@@ -11,6 +11,8 @@ public class LevelManager : MonoBehaviour
 
     private int unlockedLeves;
 
+    public GameObject pauseButton;
+
     private void Start()
     {
         unlockedLeves = PlayerPrefs.GetInt("unlockedLevels", 1);
@@ -29,11 +31,33 @@ public class LevelManager : MonoBehaviour
     public void LoadLevel(int levelIndex)
     {
         SceneManager.LoadScene(levelIndex);
+        Time.timeScale = 1.0f;
     }
 
     public void LoadMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+        Time.timeScale = 1.0f;
+    }
+
+    public void PauseButton()
+    {
+        Time.timeScale = 0f;
+        pauseButton.SetActive(true);
+    }
+
+    public void PlayButton()
+    {
+        Time.timeScale = 1.0f;
+        pauseButton.SetActive(false);
+    }
+
+    public void ReplayButton()
+    {
+        Time.timeScale = 1;
+
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentSceneName);
     }
 
 }

@@ -10,7 +10,7 @@ public class FinishLine : MonoBehaviour
     
     PlayerController playerController;
     CinemachineVirtualCamera virtualCamera;
-    public GameObject finishScreen;
+    public GameObject finishScreen,pauseButton;
     public Animator animCamera;
 
     private void Start()
@@ -27,7 +27,8 @@ public class FinishLine : MonoBehaviour
         {
             animator.SetBool("isRunning", false);            
             animator.SetBool("isWin", true);
-
+            PauseButton();
+            
             if (playerController)
             {
                 playerController.z_speed = 0;
@@ -43,5 +44,10 @@ public class FinishLine : MonoBehaviour
     void WaitForSecond()
     {
         finishScreen.SetActive(true);
+    }
+
+    public void PauseButton()
+    {
+        pauseButton.SetActive(false);
     }
 }
