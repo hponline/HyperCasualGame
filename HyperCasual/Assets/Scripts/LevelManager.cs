@@ -15,6 +15,7 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
+        // levelleri kitler sýrayla acar
         unlockedLeves = PlayerPrefs.GetInt("unlockedLevels", 1);
 
         for (int i = 0; i < buttons.Length; i++)

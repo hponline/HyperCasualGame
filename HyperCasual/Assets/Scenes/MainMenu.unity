@@ -3057,6 +3057,7 @@ MonoBehaviour:
   - {fileID: 509141081}
   - {fileID: 2051774483}
   - {fileID: 415396252}
+  pauseButton: {fileID: 0}
 --- !u!4 &1661547475
 Transform:
   m_ObjectHideFlags: 0
@@ -3312,14 +3313,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.5372549, b: 0.14117648, a: 1}
+  m_Color: {r: 1, g: 0.5613208, b: 0.5613208, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 756b372f663e3214ebad8f7bfe436c36, type: 3}
+  m_Texture: {fileID: 2800000, guid: dbedf586b4818794494a6a445792a575, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0

@@ -1,4 +1,5 @@
 using Cinemachine;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -6,9 +7,8 @@ public class PlayerController : MonoBehaviour
     private CharacterController controller;
     private Vector3 direction;
     private Animator anim;
-    CinemachineVirtualCamera cam;
-
     private int desiredLane = 1; // 0: sol, 1: orta, 2: sað
+    public GameObject finishScreen;
 
     [Header("Hýz Deðiþkenleri")]
     public float z_speed = 10f;
@@ -34,20 +34,19 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
-        anim = GetComponent<Animator>();
-        cam = GetComponent<CinemachineVirtualCamera>();
+        anim = GetComponent<Animator>();        
     }
 
     void Update()
     {
         // Karakterin sürekli ileri hareket etmesini saðlama
-
+        anim.SetBool("isRunning", false);
+        
         // Karakter idle animasyonu
         if (runCooldown < Time.time)
-        {
+        {            
             direction.z = z_speed;
             anim.SetBool("isRunning", true);
-
         }
 
         // Yol deðiþtirme
@@ -92,21 +91,17 @@ public class PlayerController : MonoBehaviour
             verticalVelocity = -2f; // Yere saðlam basmasýný saðlamak için küçük bir negatif deðer
         }
 
-
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
             verticalVelocity = Mathf.Sqrt(jump * -2f * gravity);
-
-            JumpAnimation();
-            
+            JumpAnimation();            
         }
         verticalVelocity += gravity * Time.deltaTime;
-        direction.y = verticalVelocity;
+        direction.y = verticalVelocity;        
     }
 
     private void FixedUpdate()
     {
-
         // Hareket ettirme
         controller.Move(direction * Time.fixedDeltaTime);
     }
@@ -114,10 +109,24 @@ public class PlayerController : MonoBehaviour
     public void JumpAnimation()
     {
         anim.SetInteger("JumpIndex", Random.Range(0, 4));
-        anim.SetTrigger("Jump"); 
-        
+        anim.SetTrigger("Jump");         
     }
 
-    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Obstackle"))
+        {
+            anim.SetBool("isRunning",false);
+            z_speed= 0f;
+            anim.SetInteger("DeadIndex", Random.Range(0, 6));
+            anim.SetTrigger("isDead");
+            Invoke("DeadScreen", 2);
+        }
+    }
 
+    public void DeadScreen()
+    {
+        finishScreen.SetActive(true);
+        Time.timeScale = 0f;
+    }
 }

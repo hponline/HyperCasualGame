@@ -15,7 +15,6 @@ public class ProgressBar : MonoBehaviour
         maxDistance = finishBar.transform.position.z; 
         progressBarSlider.value = startBar.transform.position.z / maxDistance;
     }
-
     
     void Update()
     {
