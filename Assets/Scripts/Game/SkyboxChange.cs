@@ -38,8 +38,7 @@ public class SkyboxChange : MonoBehaviour
         if (selectedSkyboxIndex >= 0 && selectedSkyboxIndex < skyBox.Length)
         {
             RenderSettings.skybox = skyBox[selectedSkyboxIndex];
-            DynamicGI.UpdateEnvironment();
-            Debug.Log("Skybox deðiþti" + selectedSkyboxIndex);
+            DynamicGI.UpdateEnvironment();            
         }
     }
 }
