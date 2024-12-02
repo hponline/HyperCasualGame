@@ -4,7 +4,8 @@
  <hr>
  Resim:
  
-![MainMenu](https://github.com/user-attachments/assets/a04d170c-7610-4046-8cdf-855bd0d96e81)
+![MainMenuBackground](https://github.com/user-attachments/assets/40154100-1245-499d-8bcc-f2528976748a)
+
 
 Video:
 
