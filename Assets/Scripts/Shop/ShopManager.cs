@@ -26,6 +26,7 @@ public class ShopManager : MonoBehaviour
     public Sprite[] characterSprite;
     bool[] CharacterisPurchased;
 
+    CharacterChange character;
 
     private void Start()
     {
@@ -36,25 +37,25 @@ public class ShopManager : MonoBehaviour
         ShowItems();
         LoadPanels();
         CheckBuyItems();
-        CheckBuyCharactersItems();
-        CharacterLoadPanels();
+        CheckBuyCharactersItems();        
     }
 
     public void ShowItems()
     {
         // Ürün sayýsý kadar gösterir geri kalanlarý gizler.
 
-        // SkyBox
+        // SkyBox slot açma/kapama
         for (int i = 0; i < shopItemsSO.Length; i++)
         {
             shopPanelsGameObject[i].SetActive(true);
         }
 
-        // Karakter
+        // Karakter slot açma/kapama
         for (int i = 0; i < characterItemSO.Length; i++)
         {
             characterPanelGameObject[i].SetActive(true);
         }
+
 
         // ----------- Characters bölümü -----------
         CharacterisPurchased = new bool[characterItemSO.Length];
@@ -73,8 +74,10 @@ public class ShopManager : MonoBehaviour
         for (int i = 0; i < characterApplyBtn.Length; i++)
         {
             int index = i;
-            //applyBtn[i].GetComponent<Button>().onClick.AddListener(() => ApplyItem(index));
+            //characterApplyBtn[i].GetComponent<Button>().onClick.AddListener(() => character.ApplyCharacter(index));
+            characterApplyBtn[i].GetComponent<Button>().onClick.AddListener(() => SelectedCharacter(index));
         }
+
 
         // ----------- SkyBox bölümü -----------
         isPurchased = new bool[shopItemsSO.Length];
@@ -96,6 +99,21 @@ public class ShopManager : MonoBehaviour
             applyBtn[i].GetComponent<Button>().onClick.AddListener(() => ApplyItem(index));
         }
     }
+
+    //public void SelecCharacter(int index)
+    //{
+    //    GetComponent<Button>().onClick.AddListener(() => character.ApplyCharacter(index));
+        
+    //}
+
+    public void SelectedCharacter(int index)
+    {
+        PlayerPrefs.SetInt("SelectedCharacterIndex", index);
+        PlayerPrefs.Save();
+        Debug.Log("Karakter Kaydedildi " + index);
+    }
+
+
 
     public void Reset()
     {
@@ -183,7 +201,7 @@ public class ShopManager : MonoBehaviour
             CheckBuyCharactersItems();
         }
     }
-
+        
     public void LoadPanels()
     {
         for (int i = 0; i < shopItemsSO.Length; i++)
@@ -192,9 +210,7 @@ public class ShopManager : MonoBehaviour
             shopPanels[i].skyBoxImage.sprite = shopItemsSO[i].SkyBoxImage;
             shopPanels[i].costText.text = "Coins: " + shopItemsSO[i].baseCost.ToString();
         }
-    }
-    public void CharacterLoadPanels()
-    {
+
         for (int i = 0; i < characterItemSO.Length; i++)
         {
             characterTemplatePanels[i].titleText.text = characterItemSO[i].itemTitle;

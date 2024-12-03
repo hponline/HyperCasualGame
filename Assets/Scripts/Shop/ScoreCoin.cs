@@ -22,7 +22,7 @@ public class ScoreCoin : MonoBehaviour
             Destroy(other.gameObject);
 
             // Topladýgýmýz coinler kaydedilir.
-            PlayerPrefs.SetInt("PlayerCoins", _coin);
+            PlayerPrefs.SetInt("PlayerCoins", _coin);            
         }
     }
 }

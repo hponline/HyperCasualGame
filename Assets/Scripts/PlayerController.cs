@@ -1,4 +1,5 @@
 using Cinemachine;
+using TMPro;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using static UnityEditor.Timeline.TimelinePlaybackControls;
@@ -125,7 +126,7 @@ public class PlayerController : MonoBehaviour
             anim.SetInteger("DeadIndex", Random.Range(0, 6));
             anim.SetTrigger("isDead");
             Invoke("DeadScreen", 2);
-        }        
+        }       
     }
 
     public void DeadScreen()
@@ -134,3 +135,5 @@ public class PlayerController : MonoBehaviour
         Time.timeScale = 0f;
     }
 }
+
+// karakter engellerden geçiyor // kamera oyuncuya sabitlenmiyor
