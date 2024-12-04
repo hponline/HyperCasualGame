@@ -1,30 +1,30 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterChange : MonoBehaviour
 {
-
     [Header("Characters")]
     public GameObject[] characterPrefabs;
-    GameObject currentCharacter;
+    public CinemachineVirtualCamera virtualCamera;
 
     private void Start()
     {
-        int selectedIndex = PlayerPrefs.GetInt("SelectedCharacterIndex", 0);
+        foreach (var character in characterPrefabs)
+        {
+            character.SetActive(false);
+        }
+        int selectedIndex = PlayerPrefs.GetInt("SelectedCharacterIndex", 0);        
 
-        ApplyCharacter(selectedIndex);
-    }
-
-
-
-    public void ApplyCharacter(int index)
-    {
-        //if (currentCharacter != null)
-        //{
-        //    Destroy(currentCharacter);
-        //}
-        currentCharacter = Instantiate(characterPrefabs[index], Vector3.zero, Quaternion.identity);
-        currentCharacter.SetActive(true);
+        if (selectedIndex >= 0 && selectedIndex <characterPrefabs.Length)
+        {
+            characterPrefabs[selectedIndex].SetActive(true);
+            virtualCamera.Follow = characterPrefabs[selectedIndex].transform;
+        }
+        else
+        {
+            Debug.Log("Karakter seçim hatasý");
+        }
     }
 }

@@ -26,7 +26,6 @@ public class ShopManager : MonoBehaviour
     public Sprite[] characterSprite;
     bool[] CharacterisPurchased;
 
-    CharacterChange character;
 
     private void Start()
     {
@@ -74,7 +73,6 @@ public class ShopManager : MonoBehaviour
         for (int i = 0; i < characterApplyBtn.Length; i++)
         {
             int index = i;
-            //characterApplyBtn[i].GetComponent<Button>().onClick.AddListener(() => character.ApplyCharacter(index));
             characterApplyBtn[i].GetComponent<Button>().onClick.AddListener(() => SelectedCharacter(index));
         }
 
@@ -100,17 +98,11 @@ public class ShopManager : MonoBehaviour
         }
     }
 
-    //public void SelecCharacter(int index)
-    //{
-    //    GetComponent<Button>().onClick.AddListener(() => character.ApplyCharacter(index));
-        
-    //}
-
+    // Karakter kaydetme
     public void SelectedCharacter(int index)
     {
         PlayerPrefs.SetInt("SelectedCharacterIndex", index);
         PlayerPrefs.Save();
-        Debug.Log("Karakter Kaydedildi " + index);
     }
 
 

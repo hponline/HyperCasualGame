@@ -63,7 +63,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: "Z\u0131plama1"
-  m_Speed: 1
+  m_Speed: 1.11
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1262330078040016577}
@@ -132,7 +132,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: "Z\u0131plama2"
-  m_Speed: 1
+  m_Speed: 1.11
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -5599318210533549851}
@@ -287,7 +287,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: "Z\u0131plama3"
-  m_Speed: 1
+  m_Speed: 1.11
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1832243997942719004}
@@ -653,7 +653,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: "Z\u0131plama4"
-  m_Speed: 1
+  m_Speed: 1.11
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -2862489243097310416}

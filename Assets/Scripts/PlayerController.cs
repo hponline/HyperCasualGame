@@ -136,4 +136,3 @@ public class PlayerController : MonoBehaviour
     }
 }
 
-// karakter engellerden geçiyor // kamera oyuncuya sabitlenmiyor

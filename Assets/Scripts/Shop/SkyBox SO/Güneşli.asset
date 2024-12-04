@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemTitle: "G\xFCne\u015Fli"
   SkyBoxImage: {fileID: 21300000, guid: 588dcabbf7c4c5e4f837aede0ded0d9b, type: 3}
-  baseCost: 10
+  baseCost: 0
