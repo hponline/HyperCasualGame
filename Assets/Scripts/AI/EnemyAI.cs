@@ -34,9 +34,9 @@ public class EnemyAI : MonoBehaviour
             var meshlink = agent.currentOffMeshLinkData;
             if (!jump && meshlink.offMeshLink.area == NavMesh.GetAreaFromName("Start"))
             {
-                JumpAnimation();
-                animator.SetBool("Jump",true);
+                animator.SetBool("Jump",true);              
                 animator.SetBool("isRunning", false);
+                JumpAnimation();
                 jump = true;
             }
         }

@@ -712,9 +712,9 @@ GameObject:
   - component: {fileID: 6920764404939721779}
   - component: {fileID: 5094772657099641803}
   - component: {fileID: 4470072159322376468}
-  - component: {fileID: 7796633778730049819}
   - component: {fileID: 8098120546741675018}
   - component: {fileID: 4447915756845189509}
+  - component: {fileID: 2454689849122554308}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -755,17 +755,12 @@ MonoBehaviour:
   finishScreen: {fileID: 0}
   z_speed: 12
   laneChangeSpeed: 3
-  laneDistance: 12
-  runCooldown: 5
   groundCheck: {fileID: 6472959225024427196}
   groundDistance: 0.3
   groundMask:
     serializedVersion: 2
     m_Bits: 64
   jump: 2.8
-  gravity: -13
-  coinText: {fileID: 0}
-  _coin: 0
 --- !u!143 &4470072159322376468
 CharacterController:
   m_ObjectHideFlags: 0
@@ -785,36 +780,13 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 0
-  m_Radius: 0
+  m_Height: 2
+  m_Radius: 0.46
   m_SlopeLimit: 45
   m_StepOffset: 0
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &7796633778730049819
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3810359861197755476}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.41809213
-  m_Height: 2.37
-  m_Direction: 1
-  m_Center: {x: 0, y: 1.4, z: 0.018092096}
+  m_Center: {x: 0, y: 1.23, z: 0}
 --- !u!95 &8098120546741675018
 Animator:
   serializedVersion: 5
@@ -844,7 +816,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3810359861197755476}
   serializedVersion: 4
-  m_Mass: 5
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -863,6 +835,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &2454689849122554308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3810359861197755476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 169adab60109fe9448513d7212662b68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinText: {fileID: 0}
+  _coin: 0
 --- !u!1 &4593727278729829517
 GameObject:
   m_ObjectHideFlags: 0

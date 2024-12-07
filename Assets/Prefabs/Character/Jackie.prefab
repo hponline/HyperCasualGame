@@ -2067,16 +2067,15 @@ GameObject:
   - component: {fileID: 4350007289328668837}
   - component: {fileID: 4867881599162844759}
   - component: {fileID: 4068754765678903285}
-  - component: {fileID: 4922420812739290310}
   - component: {fileID: 3084982531143095740}
   - component: {fileID: -771139278778990635}
   m_Layer: 0
   m_Name: Jackie
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5143901116799118949
 Transform:
   m_ObjectHideFlags: 0
@@ -2131,15 +2130,12 @@ MonoBehaviour:
   finishScreen: {fileID: 0}
   z_speed: 12
   laneChangeSpeed: 3
-  laneDistance: 12
-  runCooldown: 5
   groundCheck: {fileID: 7098537067849005097}
   groundDistance: 0.3
   groundMask:
     serializedVersion: 2
     m_Bits: 64
   jump: 2.8
-  gravity: -13
 --- !u!143 &4068754765678903285
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2159,36 +2155,13 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 0
-  m_Radius: 0
+  m_Height: 2
+  m_Radius: 0.46
   m_SlopeLimit: 45
   m_StepOffset: 0
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &4922420812739290310
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7991369830869069907}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.41809213
-  m_Height: 2.37
-  m_Direction: 1
-  m_Center: {x: 0, y: 1.4, z: 0.018092096}
+  m_Center: {x: 0, y: 1.23, z: 0}
 --- !u!54 &3084982531143095740
 Rigidbody:
   m_ObjectHideFlags: 0

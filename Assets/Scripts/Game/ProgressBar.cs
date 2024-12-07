@@ -1,26 +1,51 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ProgressBar : MonoBehaviour
 {
-    public GameObject player;
-    public GameObject finishBar;
+    
+    public Transform charactersParent;
+    public Transform finishBar;
+    Transform activeCharacter;
     Slider progressBarSlider;
     float maxDistance;
+
     void Start()
-    {
-        progressBarSlider = GetComponent<Slider>();        
-        maxDistance = finishBar.transform.position.z; 
-        progressBarSlider.value = player.transform.position.z / maxDistance;
-    }
-    
-    void Update()
-    {
-        if (progressBarSlider.value < 1)
+    {       
+        progressBarSlider = GetComponent<Slider>();
+
+        if (finishBar != null )
         {
-            progressBarSlider.value = player.transform.position.z / maxDistance;
+            maxDistance = finishBar.position.z;
         }
+        else
+        {
+            Debug.Log("finish referans yok");
+        }
+    }
+
+    void Update()
+    {       
+        UpdateActiveCharacter();
+        if (activeCharacter !=null && progressBarSlider != null && progressBarSlider.value < 1)
+        {
+            float currentDistance = activeCharacter.position.z;
+            progressBarSlider.value = currentDistance / maxDistance;            
+        }        
+    }
+
+
+    public void UpdateActiveCharacter()
+    {        
+        foreach (Transform child in charactersParent)
+        {
+            if (child.gameObject.activeSelf)
+            {
+                activeCharacter = child;
+                
+                return;
+            }
+        }        
+        activeCharacter = null;
     }
 }

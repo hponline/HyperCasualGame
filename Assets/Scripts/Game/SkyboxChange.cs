@@ -8,11 +8,6 @@ public class SkyboxChange : MonoBehaviour
     public Material[] skyBox;
 
 
-    //[Header("Characters")]
-    //public GameObject[] characterPrefabs;
-
-
-
     private void Awake()
     {
         if (SkyBoxInstance == null)
@@ -26,25 +21,6 @@ public class SkyboxChange : MonoBehaviour
         }       
 
     }
-
-    //private void Start()
-    //{
-    //    for (int i = 0; i < characterPrefabs.Length; i++)
-    //    {
-    //        characterPrefabs[i].SetActive(false);
-    //    }
-    //    characterPrefabs[0].SetActive(true);
-    //}
-
-    //public void ApplyCharacter(int currentCharacter)
-    //{
-    //    for (int i = 0; i < characterPrefabs.Length; i++)
-    //    {
-    //        characterPrefabs[i].SetActive(false);
-    //    }
-    //    characterPrefabs[currentCharacter].SetActive(true);
-    //}
-
 
     private void OnEnable()
     {        
@@ -65,6 +41,4 @@ public class SkyboxChange : MonoBehaviour
             DynamicGI.UpdateEnvironment();            
         }
     }
-
-
 }

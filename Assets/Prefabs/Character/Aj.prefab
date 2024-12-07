@@ -1959,7 +1959,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1967327478998163645
 Transform:
   m_ObjectHideFlags: 0
@@ -1996,15 +1996,12 @@ MonoBehaviour:
   finishScreen: {fileID: 0}
   z_speed: 12
   laneChangeSpeed: 3
-  laneDistance: 12
-  runCooldown: 5
   groundCheck: {fileID: 156799925864387630}
   groundDistance: 0.3
   groundMask:
     serializedVersion: 2
     m_Bits: 64
   jump: 2.8
-  gravity: -13
 --- !u!95 &16271734082719420
 Animator:
   serializedVersion: 5

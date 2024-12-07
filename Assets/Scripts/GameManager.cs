@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {   
+    public static GameManager gameManagerInstance;
+
     [SerializeField] private Button[] buttons;
     private int unlockedLeves;
 
@@ -27,7 +29,7 @@ public class GameManager : MonoBehaviour
         //{
         //    buttons[i].interactable = true;
         //}
-    }
+    }    
 
 
     public void LoadLevel(int levelIndex)

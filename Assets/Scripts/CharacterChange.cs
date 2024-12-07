@@ -1,7 +1,6 @@
 using Cinemachine;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
 
 public class CharacterChange : MonoBehaviour
 {
@@ -20,7 +19,7 @@ public class CharacterChange : MonoBehaviour
         if (selectedIndex >= 0 && selectedIndex <characterPrefabs.Length)
         {
             characterPrefabs[selectedIndex].SetActive(true);
-            virtualCamera.Follow = characterPrefabs[selectedIndex].transform;
+            virtualCamera.Follow = characterPrefabs[selectedIndex].transform;            
         }
         else
         {

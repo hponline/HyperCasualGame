@@ -15,25 +15,24 @@ public class PlayerController : MonoBehaviour
 
     [Header("Hýz Deðiþkenleri")]
     public float z_speed = 10f;
-    [SerializeField]
-    private float laneChangeSpeed = 3f,
-        laneDistance = 12.0f, // Sað ve sol þeritler arasýndaki mesafe
-        runCooldown = 5;
+    [SerializeReference]
+    float laneChangeSpeed = 3f;
+    float laneDistance = 12.0f; // Sað ve sol þeritler arasýndaki mesafe
+    float runCooldown = 5;
 
 
     [Header("Zemin Kontrol")]
     [SerializeField]
-    private Transform groundCheck;
+    Transform groundCheck;
     [SerializeField]
-    private float groundDistance = 0.3f;
+    float groundDistance = 0.3f;
     [SerializeField]
-    private LayerMask groundMask;
+    LayerMask groundMask;
     [SerializeField]
-    private float
-        jump = 5,
-        gravity = -9.7f;
-    private bool isGrounded = false;
-    private float verticalVelocity;
+    float jump = 5;
+    float gravity = -9.7f;
+    bool isGrounded = false;
+    float verticalVelocity;
 
 
     void Start()
