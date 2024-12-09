@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -9,26 +10,20 @@ public class EnemyAI : MonoBehaviour
     NavMeshAgent agent;
     Animator animator;
     private bool jump = false;
-    public float runCooldown;
 
-    
+    [Header("Geri Sayým")]
+    public int countdownStartTimer;
+
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+
+        StartCoroutine(CountDownStartToGo());
     }
 
     private void Update()
-    {
-        animator.SetBool("isRunning", false);        
-        // idle animasyon
-        if (runCooldown < Time.time)
-        {
-            agent.SetDestination(_location.transform.position);
-            animator.SetBool("isRunning", true);
-            Debug.Log("animasyon");
-        }
-        
+    {       
         // NavMeshAgent zýplama animasyonu
         if (agent.isOnOffMeshLink)
         {
@@ -54,5 +49,23 @@ public class EnemyAI : MonoBehaviour
         animator.SetInteger("JumpIndex", Random.Range(0, 4));
         animator.SetTrigger("Jump");
     }
+
+    public void Run()
+    {
+        agent.SetDestination(_location.transform.position);
+        animator.SetBool("isRunning", true);
+    }
+
+    IEnumerator CountDownStartToGo()
+    {
+        while (countdownStartTimer > 0)
+        {           
+            yield return new WaitForSeconds(1f);
+            countdownStartTimer--;
+            
+        }
+        yield return new WaitForSeconds(1f);
+        Run();
+    }
 }
-// oyun baþladýgýnda geri sayým eklenecek
+

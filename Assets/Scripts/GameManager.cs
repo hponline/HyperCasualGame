@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -13,6 +14,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] Button[] buttons;
     int unlockedLeves;
     string menu = "MainMenu";
+
+   
 
     private void Start()
     {
@@ -29,17 +32,20 @@ public class GameManager : MonoBehaviour
             {
                 buttons[i].interactable = true;                
             }
+            Debug.Log("Unlocked Levels: " + PlayerPrefs.GetInt("unlockedLevels"));
+
         }
+
     }
 
     public void UnlockLevels()
     {
         int currentLevel = SceneManager.GetActiveScene().buildIndex;
-        if (currentLevel > PlayerPrefs.GetInt("unlockedLevels"))
+        if (currentLevel >= PlayerPrefs.GetInt("unlockedLevels"))
         {
             PlayerPrefs.SetInt("unlockedLevels", currentLevel + 1);
         }
-    }
+    }    
 
 
     public void LoadLevel(int levelIndex)
@@ -73,3 +79,4 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 }
+// SoundPlay eklenecek -- karakter çarptýgýnda efekt eklenecek

@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5d4a8f70cc655214084d55c86fad1a31, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 44.43489
+      value: 34.96
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5d4a8f70cc655214084d55c86fad1a31, type: 3}
       propertyPath: m_LocalPosition.y
@@ -70,15 +70,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5d4a8f70cc655214084d55c86fad1a31, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5d4a8f70cc655214084d55c86fad1a31, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 1285705782834317151, guid: 5d4a8f70cc655214084d55c86fad1a31, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 2b37da70cb43ff949928df4bb07b0e95, type: 2}
+      objectReference: {fileID: 2100000, guid: 60dbe858848c1a34082038fdc6de1728, type: 2}
     - target: {fileID: 7992580012536702362, guid: 5d4a8f70cc655214084d55c86fad1a31, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.6
+      value: 2.01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -144,19 +148,19 @@ NavMeshAgent:
   m_GameObject: {fileID: 3186601999849340242}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.3
-  m_Speed: 12
+  m_Radius: 0.5
+  m_Speed: 10
   m_Acceleration: 8
-  avoidancePriority: 50
+  avoidancePriority: 2
   m_AngularSpeed: 120
-  m_StoppingDistance: 5
+  m_StoppingDistance: 10
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 1.24
   m_BaseOffset: -0.3
   m_WalkableMask: 9
-  m_ObstacleAvoidanceType: 2
+  m_ObstacleAvoidanceType: 3
 --- !u!95 &384634367987404214
 Animator:
   serializedVersion: 5
@@ -191,7 +195,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _location: {fileID: 0}
-  runCooldown: 0
+  runCooldown: 5
+  countdownStartTimer: 5
 --- !u!64 &8536209384315215920
 MeshCollider:
   m_ObjectHideFlags: 0

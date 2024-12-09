@@ -1,15 +1,19 @@
 using Cinemachine;
+using System.Collections;
 using TMPro;
+using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public class PlayerController : MonoBehaviour
 {
-
+    public static PlayerController PlayerInstance;
     CharacterController controller;
     Vector3 direction;
-    Animator anim;
+    [HideInInspector]
+    public Animator anim;
     int desiredLane = 1; // 0: sol, 1: orta, 2: sað
     public GameObject finishScreen;
     public GameObject deadScreen;
@@ -19,7 +23,6 @@ public class PlayerController : MonoBehaviour
     [SerializeReference]
     float laneChangeSpeed = 3f;
     float laneDistance = 12.0f; // Sað ve sol þeritler arasýndaki mesafe
-    public float runCooldown = 5;
 
 
     [Header("Zemin Kontrol")]
@@ -29,29 +32,37 @@ public class PlayerController : MonoBehaviour
     float groundDistance = 0.3f;
     [SerializeField]
     LayerMask groundMask;
-    [SerializeField, Range(0,4)]
-    float jump = 3;
-    public float gravity = -9.7f;
+    [SerializeField, Range(0, 4)]
+    float jump;
+    public float gravity;
     bool isGrounded = false;
+    public bool isReady = false;
     float verticalVelocity;
 
+    [Header("Geri Sayým")]
+    public int countdownStartTimer;
+    public TMP_Text countdownStartTxt;
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
+
+        if (SceneManager.GetActiveScene().name != "menu")
+            StartCoroutine(CountDownStartToGo());
+        else
+            Debug.Log("Corotine çalýþmadý");
     }
 
     void Update()
     {
-        // Karakterin sürekli ileri hareket etmesini saðlama
-        anim.SetBool("isRunning", false);
-
-        // Karakter idle animasyonu
-        if (runCooldown < Time.time)
+        
+        if (isReady)
+            Run();
+        else
         {
-            direction.z = z_speed;
-            anim.SetBool("isRunning", true);
+            anim.SetBool("isRunning", false);
+            desiredLane = 1; // geri sayým yaparken ortada beklemesi için
         }
 
         // Yol deðiþtirme
@@ -105,6 +116,27 @@ public class PlayerController : MonoBehaviour
         direction.y = verticalVelocity;
     }
 
+    public void Run()
+    {
+        direction.z = z_speed;
+        anim.SetBool("isRunning", true);
+    }
+
+    IEnumerator CountDownStartToGo()
+    {
+        while (countdownStartTimer > 0)
+        {
+            countdownStartTxt.text = countdownStartTimer.ToString();
+            isReady = false;
+            yield return new WaitForSeconds(1f);
+            countdownStartTimer--;
+        }
+        countdownStartTxt.text = "GO!";
+        yield return new WaitForSeconds(1f);
+        countdownStartTxt.gameObject.SetActive(false);
+        isReady = true;        
+    }
+
     private void FixedUpdate()
     {
         // Hareket ettirme
@@ -124,7 +156,7 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("isRunning", false);
             z_speed = 0f;
             anim.SetTrigger("isDead");
-            anim.SetInteger("DeadIndex", Random.Range(0, 4));
+            anim.SetInteger("DeadIndex", Random.Range(0, 4));            
             Invoke("DeadScreen", 2f);
         }
     }
@@ -135,4 +167,3 @@ public class PlayerController : MonoBehaviour
         Time.timeScale = 0f;
     }
 }
-// oyun baþladýgýnda geri sayým eklenecek

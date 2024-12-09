@@ -198,18 +198,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d6312cf6e9d0ef45a500c0ceb325ee9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
   finishScreen: {fileID: 0}
+  deadScreen: {fileID: 0}
   z_speed: 12
   laneChangeSpeed: 3
-  laneDistance: 12
-  runCooldown: 5
   groundCheck: {fileID: 3650086209203121641}
   groundDistance: 1.2
   groundMask:
     serializedVersion: 2
     m_Bits: 64
-  jump: 2.8
-  gravity: -17.8
+  jump: 3.1
+  gravity: -15
+  isReady: 0
+  countdownStartTimer: 5
+  countdownStartTxt: {fileID: 0}
 --- !u!95 &2777000070229338132
 Animator:
   serializedVersion: 5
