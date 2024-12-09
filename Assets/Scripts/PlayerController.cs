@@ -12,13 +12,14 @@ public class PlayerController : MonoBehaviour
     Animator anim;
     int desiredLane = 1; // 0: sol, 1: orta, 2: sað
     public GameObject finishScreen;
+    public GameObject deadScreen;
 
     [Header("Hýz Deðiþkenleri")]
     public float z_speed = 10f;
     [SerializeReference]
     float laneChangeSpeed = 3f;
     float laneDistance = 12.0f; // Sað ve sol þeritler arasýndaki mesafe
-    float runCooldown = 5;
+    public float runCooldown = 5;
 
 
     [Header("Zemin Kontrol")]
@@ -28,9 +29,9 @@ public class PlayerController : MonoBehaviour
     float groundDistance = 0.3f;
     [SerializeField]
     LayerMask groundMask;
-    [SerializeField]
-    float jump = 5;
-    float gravity = -9.7f;
+    [SerializeField, Range(0,4)]
+    float jump = 3;
+    public float gravity = -9.7f;
     bool isGrounded = false;
     float verticalVelocity;
 
@@ -122,16 +123,16 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetBool("isRunning", false);
             z_speed = 0f;
-            anim.SetInteger("DeadIndex", Random.Range(0, 6));
             anim.SetTrigger("isDead");
-            Invoke("DeadScreen", 2);
-        }       
+            anim.SetInteger("DeadIndex", Random.Range(0, 4));
+            Invoke("DeadScreen", 2f);
+        }
     }
 
     public void DeadScreen()
     {
-        finishScreen.SetActive(true);
+        deadScreen.SetActive(true);
         Time.timeScale = 0f;
     }
 }
-
+// oyun baþladýgýnda geri sayým eklenecek

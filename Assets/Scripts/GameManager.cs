@@ -6,30 +6,40 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
-{   
+{
     public static GameManager gameManagerInstance;
 
-    [SerializeField] private Button[] buttons;
-    private int unlockedLeves;
-
     public GameObject pauseButton;
-
+    [SerializeField] Button[] buttons;
+    int unlockedLeves;
+    string menu = "MainMenu";
 
     private void Start()
     {
-        //// levelleri kitler sýrayla acar
-        //unlockedLeves = PlayerPrefs.GetInt("unlockedLevels", 1);
+        // levelleri kitler sýrayla acar
+        unlockedLeves = PlayerPrefs.GetInt("unlockedLevels", 1);
+        if (SceneManager.GetActiveScene().name == menu)
+        {
+            for (int i = 0; i < buttons.Length; i++)
+            {
+                buttons[i].interactable = false;                
+            }
 
-        //for (int i = 0; i < buttons.Length; i++)
-        //{
-        //    buttons[i].interactable = false;
-        //}
+            for (int i = 0; i < unlockedLeves; i++)
+            {
+                buttons[i].interactable = true;                
+            }
+        }
+    }
 
-        //for (int i = 0; i < unlockedLeves; i++)
-        //{
-        //    buttons[i].interactable = true;
-        //}
-    }    
+    public void UnlockLevels()
+    {
+        int currentLevel = SceneManager.GetActiveScene().buildIndex;
+        if (currentLevel > PlayerPrefs.GetInt("unlockedLevels"))
+        {
+            PlayerPrefs.SetInt("unlockedLevels", currentLevel + 1);
+        }
+    }
 
 
     public void LoadLevel(int levelIndex)
@@ -62,5 +72,4 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
     }
-
 }

@@ -20,12 +20,13 @@ public class EnemyAI : MonoBehaviour
 
     private void Update()
     {
-        animator.SetBool("isRunning", false);
+        animator.SetBool("isRunning", false);        
         // idle animasyon
         if (runCooldown < Time.time)
         {
             agent.SetDestination(_location.transform.position);
             animator.SetBool("isRunning", true);
+            Debug.Log("animasyon");
         }
         
         // NavMeshAgent zýplama animasyonu
@@ -34,15 +35,17 @@ public class EnemyAI : MonoBehaviour
             var meshlink = agent.currentOffMeshLinkData;
             if (!jump && meshlink.offMeshLink.area == NavMesh.GetAreaFromName("Start"))
             {
-                animator.SetBool("Jump",true);              
                 animator.SetBool("isRunning", false);
-                JumpAnimation();
                 jump = true;
+                animator.SetBool("Jump",true);              
+                JumpAnimation();
             }
         }
         else
         {
             jump = false;
+            animator.SetBool("Jump", false);
+            animator.SetBool("isRunning", true);
         }            
     }
 
@@ -52,3 +55,4 @@ public class EnemyAI : MonoBehaviour
         animator.SetTrigger("Jump");
     }
 }
+// oyun baþladýgýnda geri sayým eklenecek
