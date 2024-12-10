@@ -236,7 +236,6 @@ GameObject:
   - component: {fileID: 6658001661390064087}
   - component: {fileID: 2048599651173203190}
   - component: {fileID: 7582303955690737115}
-  - component: {fileID: 4092332582222308353}
   m_Layer: 0
   m_Name: Kachujin G Rosales
   m_TagString: Player
@@ -295,7 +294,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d6312cf6e9d0ef45a500c0ceb325ee9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
   finishScreen: {fileID: 0}
+  deadScreen: {fileID: 0}
   z_speed: 12
   laneChangeSpeed: 3
   groundCheck: {fileID: 1363792060591593818}
@@ -304,6 +305,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   jump: 2.8
+  gravity: -15
+  isReady: 0
+  countdownStartTimer: 0
+  countdownStartTxt: {fileID: 0}
 --- !u!143 &2048599651173203190
 CharacterController:
   m_ObjectHideFlags: 0
@@ -357,20 +362,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &4092332582222308353
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 734066398863575196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 169adab60109fe9448513d7212662b68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coinText: {fileID: 0}
-  _coin: 0
 --- !u!1 &799002079002977760
 GameObject:
   m_ObjectHideFlags: 0

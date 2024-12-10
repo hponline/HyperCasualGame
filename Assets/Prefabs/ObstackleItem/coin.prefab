@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6458249535594301989}
   - component: {fileID: 4199167458369683759}
-  - component: {fileID: 9153345980349261131}
   - component: {fileID: 3991224012383446}
+  - component: {fileID: 4713239480751256016}
   m_Layer: 0
   m_Name: coin
   m_TagString: Coin
@@ -86,27 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &9153345980349261131
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7939107299965390742}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9fb380d47b370d44cb3da3639f2684f3, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!65 &3991224012383446
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -126,5 +105,21 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.56, y: 2.56, z: 1.018787}
-  m_Center: {x: 0, y: 0, z: 0.14}
+  m_Size: {x: 5.300941, y: 2.56, z: 5.357361}
+  m_Center: {x: -0.02827239, y: 0, z: 0.21279907}
+--- !u!114 &4713239480751256016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7939107299965390742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 169adab60109fe9448513d7212662b68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinText: {fileID: 0}
+  _coin: 0
+  floatY: 0.5
+  floatSpeed: 2

@@ -122,9 +122,6 @@ PrefabInstance:
       addedObject: {fileID: 7806046781489215879}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f6dced5ce81a8574998b1d50f970cfa5, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7668474290255090657}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f6dced5ce81a8574998b1d50f970cfa5, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 2193967754496785028}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f6dced5ce81a8574998b1d50f970cfa5, type: 3}
       insertIndex: -1
@@ -168,32 +165,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d6312cf6e9d0ef45a500c0ceb325ee9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
   finishScreen: {fileID: 0}
+  deadScreen: {fileID: 0}
   z_speed: 12
   laneChangeSpeed: 3
-  laneDistance: 12
-  runCooldown: 5
   groundCheck: {fileID: 1819605379073022161}
   groundDistance: 0.3
   groundMask:
     serializedVersion: 2
     m_Bits: 64
   jump: 2.8
-  gravity: -17.8
---- !u!114 &7668474290255090657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3689692384272061271}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 169adab60109fe9448513d7212662b68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coinText: {fileID: 0}
-  _coin: 0
+  gravity: -15
+  isReady: 0
+  countdownStartTimer: 0
+  countdownStartTxt: {fileID: 0}
 --- !u!54 &2193967754496785028
 Rigidbody:
   m_ObjectHideFlags: 0

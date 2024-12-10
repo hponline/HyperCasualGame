@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -16,7 +12,6 @@ public class GameManager : MonoBehaviour
     string menu = "MainMenu";
 
    
-
     private void Start()
     {
         // levelleri kitler sýrayla acar
@@ -31,11 +26,8 @@ public class GameManager : MonoBehaviour
             for (int i = 0; i < unlockedLeves; i++)
             {
                 buttons[i].interactable = true;                
-            }
-            Debug.Log("Unlocked Levels: " + PlayerPrefs.GetInt("unlockedLevels"));
-
+            }   
         }
-
     }
 
     public void UnlockLevels()
@@ -46,7 +38,6 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("unlockedLevels", currentLevel + 1);
         }
     }    
-
 
     public void LoadLevel(int levelIndex)
     {
@@ -79,4 +70,3 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 }
-// SoundPlay eklenecek -- karakter çarptýgýnda efekt eklenecek

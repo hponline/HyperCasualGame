@@ -1,20 +1,18 @@
-using Cinemachine;
 using System.Collections;
 using TMPro;
-using UnityEditor;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using static UnityEditor.Timeline.TimelinePlaybackControls;
+
 
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController PlayerInstance;
     CharacterController controller;
     Vector3 direction;
+
     [HideInInspector]
     public Animator anim;
-    int desiredLane = 1; // 0: sol, 1: orta, 2: sað
+    public int desiredLane = 1; // 0: sol, 1: orta, 2: sað
     public GameObject finishScreen;
     public GameObject deadScreen;
 
@@ -35,7 +33,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField, Range(0, 4)]
     float jump;
     public float gravity;
-    bool isGrounded = false;
+    public bool isGrounded = false;
     public bool isReady = false;
     float verticalVelocity;
 
@@ -47,7 +45,7 @@ public class PlayerController : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
-
+        
         if (SceneManager.GetActiveScene().name != "menu")
             StartCoroutine(CountDownStartToGo());
         else
@@ -56,13 +54,13 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        
+
         if (isReady)
             Run();
         else
         {
             anim.SetBool("isRunning", false);
-            desiredLane = 1; // geri sayým yaparken ortada beklemesi için
+            desiredLane = 1; // geri sayým yaparken ortada beklemesi için            
         }
 
         // Yol deðiþtirme
@@ -109,6 +107,7 @@ public class PlayerController : MonoBehaviour
 
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
+            AudioManager.AudioManagerInstance.PlaySFX(AudioManager.AudioManagerInstance.jumpClip);
             verticalVelocity = Mathf.Sqrt(jump * -2f * gravity);
             JumpAnimation();
         }
@@ -152,9 +151,10 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Obstackle"))
-        {
+        {            
             anim.SetBool("isRunning", false);
             z_speed = 0f;
+            AudioManager.AudioManagerInstance.PlaySFX(AudioManager.AudioManagerInstance.bumpClip);
             anim.SetTrigger("isDead");
             anim.SetInteger("DeadIndex", Random.Range(0, 4));            
             Invoke("DeadScreen", 2f);
