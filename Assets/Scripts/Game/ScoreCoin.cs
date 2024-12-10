@@ -29,9 +29,8 @@ public class ScoreCoin : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
-        {
-            //_coin++;
-            _coin += 1000;
+        {            
+            _coin += 10;
             coinText.text = _coin.ToString();
             AudioManager.AudioManagerInstance.PlaySFX(AudioManager.AudioManagerInstance.coinClip);            
             Destroy(gameObject);            
