@@ -1,5 +1,4 @@
 # ReadySetGo
- <h3>İçerik kısmı güncellenecek!!!</h3>
 
 
 <h3>Tanıtım:</h3>
@@ -21,14 +20,20 @@ Karakterimiz, bölümlerde engellere çarpmadan ve NPC'lere geri kalmadan hedefe
 
 
  <hr>
- Resim:
+ MainMenu:
  
-![MainMenuBackground](https://github.com/user-attachments/assets/40154100-1245-499d-8bcc-f2528976748a)
+![MainMenuBackground](https://github.com/user-attachments/assets/23e1c1c6-6e76-468e-b64d-1b78566a6f98)
+
+ Shop:
+![shop](https://github.com/user-attachments/assets/1446e862-3593-4275-8b48-58f212c4ab0e)
 
 
 Video:
 
 
 
-https://github.com/user-attachments/assets/1204a258-be64-4c0d-9bab-36d3ce01772c
+https://github.com/user-attachments/assets/6f16bb23-06c8-42a9-b306-ce56a50a7451
+
+
+
 
