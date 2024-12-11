@@ -1,11 +1,7 @@
-using TMPro;
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class ScoreCoin : MonoBehaviour
 {
-    public TextMeshProUGUI coinText;
-    [SerializeField] private int _coin = 0;
-
     public float floatY = 0.5f;
     public float floatSpeed = 2f;
 
@@ -13,8 +9,6 @@ public class ScoreCoin : MonoBehaviour
 
     private void Start()
     {
-        _coin = PlayerPrefs.GetInt("PlayerCoins", 0);
-        coinText.text = _coin.ToString();
         startPosition = transform.position;
     }
 
@@ -30,13 +24,14 @@ public class ScoreCoin : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {            
-            _coin += 10;
-            coinText.text = _coin.ToString();
-            AudioManager.AudioManagerInstance.PlaySFX(AudioManager.AudioManagerInstance.coinClip);            
+            ScoreText.totalCoin += 10;            
+            
+            if (AudioManager.AudioManagerInstance != null)
+                AudioManager.AudioManagerInstance.PlaySFX(AudioManager.AudioManagerInstance.coinClip);
             Destroy(gameObject);            
 
-            // Topladýgýmýz coinler kaydedilir.
-            PlayerPrefs.SetInt("PlayerCoins", _coin);            
+            // TopladÄ±gÄ±mÄ±z coinler kaydedilir.
+            PlayerPrefs.SetInt("PlayerCoins", ScoreText.totalCoin);            
         }
     }
 }

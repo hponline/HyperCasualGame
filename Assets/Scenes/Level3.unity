@@ -1135,6 +1135,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8921358021580434553, guid: 90e7b7705f0bc6345a6641afbdaf5968, type: 3}
+      propertyPath: m_Speed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8921358021580434553, guid: 90e7b7705f0bc6345a6641afbdaf5968, type: 3}
       propertyPath: m_Height
       value: 1.74
       objectReference: {fileID: 0}
@@ -3071,8 +3075,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169adab60109fe9448513d7212662b68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinText: {fileID: 1524301145304771697}
-  _coin: 0
   floatY: 0.5
   floatSpeed: 2
 --- !u!65 &671791870
@@ -5596,7 +5598,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7290869915512693674, guid: b50bcae0f94b1544190a399134a9041d, type: 3}
       propertyPath: m_Speed
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7290869915512693674, guid: b50bcae0f94b1544190a399134a9041d, type: 3}
       propertyPath: m_Radius
@@ -6004,8 +6006,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169adab60109fe9448513d7212662b68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinText: {fileID: 1524301145304771697}
-  _coin: 0
   floatY: 0.5
   floatSpeed: 2
 --- !u!65 &1162506496
@@ -9737,7 +9737,7 @@ Transform:
   m_GameObject: {fileID: 1862941936}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.09, y: -57.187046, z: 172.94}
+  m_LocalPosition: {x: 8.51, y: -57.187046, z: 172.94}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -9755,8 +9755,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169adab60109fe9448513d7212662b68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinText: {fileID: 1524301145304771697}
-  _coin: 0
   floatY: 0.5
   floatSpeed: 2
 --- !u!65 &1862941939
@@ -12527,6 +12525,10 @@ PrefabInstance:
       value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 226488487827576618, guid: d04a7fa88e9f6e943be6f13870576f6e, type: 3}
+      propertyPath: z_speed
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 226488487827576618, guid: d04a7fa88e9f6e943be6f13870576f6e, type: 3}
       propertyPath: deadScreen
       value: 
       objectReference: {fileID: 4353848778305752329}
@@ -13464,6 +13466,10 @@ PrefabInstance:
     - target: {fileID: 5094772657099641803, guid: b42e0eda58ade874ba275902f40c6f1a, type: 3}
       propertyPath: gravity
       value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5094772657099641803, guid: b42e0eda58ade874ba275902f40c6f1a, type: 3}
+      propertyPath: z_speed
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 5094772657099641803, guid: b42e0eda58ade874ba275902f40c6f1a, type: 3}
       propertyPath: deadScreen
@@ -14879,7 +14885,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Level 2
+  m_text: Level 3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -15036,6 +15042,10 @@ PrefabInstance:
       value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 5813818317467177677, guid: a0703aa026d9a7745b78bc9b7de61489, type: 3}
+      propertyPath: z_speed
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5813818317467177677, guid: a0703aa026d9a7745b78bc9b7de61489, type: 3}
       propertyPath: deadScreen
       value: 
       objectReference: {fileID: 4353848778305752329}
@@ -15108,6 +15118,10 @@ PrefabInstance:
     - target: {fileID: 4867881599162844759, guid: 24e56dae5b14d1c48ba3a6e83809d4a4, type: 3}
       propertyPath: gravity
       value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4867881599162844759, guid: 24e56dae5b14d1c48ba3a6e83809d4a4, type: 3}
+      propertyPath: z_speed
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4867881599162844759, guid: 24e56dae5b14d1c48ba3a6e83809d4a4, type: 3}
       propertyPath: deadScreen
@@ -20323,6 +20337,10 @@ PrefabInstance:
       value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 7806046781489215879, guid: fd873a157a2498646945baeefed4eaf2, type: 3}
+      propertyPath: z_speed
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 7806046781489215879, guid: fd873a157a2498646945baeefed4eaf2, type: 3}
       propertyPath: deadScreen
       value: 
       objectReference: {fileID: 4353848778305752329}
@@ -20406,6 +20424,10 @@ PrefabInstance:
     - target: {fileID: 6658001661390064087, guid: 6f5c68372a686474d841242fd3bc250c, type: 3}
       propertyPath: gravity
       value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6658001661390064087, guid: 6f5c68372a686474d841242fd3bc250c, type: 3}
+      propertyPath: z_speed
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 6658001661390064087, guid: 6f5c68372a686474d841242fd3bc250c, type: 3}
       propertyPath: deadScreen
@@ -22441,8 +22463,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169adab60109fe9448513d7212662b68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinText: {fileID: 1524301145304771697}
-  _coin: 0
   floatY: 0.5
   floatSpeed: 2
 --- !u!114 &4713239478783859741
@@ -22457,8 +22477,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169adab60109fe9448513d7212662b68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinText: {fileID: 1524301145304771697}
-  _coin: 0
   floatY: 0.5
   floatSpeed: 2
 --- !u!114 &4713239478884663920
@@ -22473,8 +22491,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169adab60109fe9448513d7212662b68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinText: {fileID: 1524301145304771697}
-  _coin: 0
   floatY: 0.5
   floatSpeed: 2
 --- !u!114 &4713239478911241637
@@ -22489,8 +22505,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169adab60109fe9448513d7212662b68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinText: {fileID: 1524301145304771697}
-  _coin: 0
   floatY: 0.5
   floatSpeed: 2
 --- !u!114 &4713239478957325575
@@ -22505,8 +22519,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169adab60109fe9448513d7212662b68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinText: {fileID: 1524301145304771697}
-  _coin: 0
   floatY: 0.5
   floatSpeed: 2
 --- !u!114 &4713239479042509735
@@ -22521,8 +22533,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169adab60109fe9448513d7212662b68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinText: {fileID: 1524301145304771697}
-  _coin: 0
   floatY: 0.5
   floatSpeed: 2
 --- !u!114 &4713239479102042053
@@ -22537,8 +22547,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169adab60109fe9448513d7212662b68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinText: {fileID: 1524301145304771697}
-  _coin: 0
   floatY: 0.5
   floatSpeed: 2
 --- !u!114 &4713239479125821871
@@ -22553,8 +22561,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169adab60109fe9448513d7212662b68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinText: {fileID: 1524301145304771697}
-  _coin: 0
   floatY: 0.5
   floatSpeed: 2
 --- !u!114 &4713239479155146466
@@ -22569,8 +22575,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169adab60109fe9448513d7212662b68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinText: {fileID: 1524301145304771697}
-  _coin: 0
   floatY: 0.5
   floatSpeed: 2
 --- !u!114 &4713239479354818966
@@ -22585,8 +22589,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169adab60109fe9448513d7212662b68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinText: {fileID: 1524301145304771697}
-  _coin: 0
   floatY: 0.5
   floatSpeed: 2
 --- !u!114 &4713239479360367987
@@ -22601,8 +22603,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169adab60109fe9448513d7212662b68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinText: {fileID: 1524301145304771697}
-  _coin: 0
   floatY: 0.5
   floatSpeed: 2
 --- !u!114 &4713239479415411213
@@ -22617,8 +22617,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169adab60109fe9448513d7212662b68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinText: {fileID: 1524301145304771697}
-  _coin: 0
   floatY: 0.5
   floatSpeed: 2
 --- !u!114 &4713239479648067687
@@ -22633,8 +22631,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169adab60109fe9448513d7212662b68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinText: {fileID: 1524301145304771697}
-  _coin: 0
   floatY: 0.5
   floatSpeed: 2
 --- !u!114 &4713239479712279795
@@ -22649,8 +22645,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169adab60109fe9448513d7212662b68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinText: {fileID: 1524301145304771697}
-  _coin: 0
   floatY: 0.5
   floatSpeed: 2
 --- !u!114 &4713239479742992067
@@ -22665,8 +22659,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169adab60109fe9448513d7212662b68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinText: {fileID: 1524301145304771697}
-  _coin: 0
   floatY: 0.5
   floatSpeed: 2
 --- !u!114 &4713239479897604171
@@ -22681,8 +22673,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169adab60109fe9448513d7212662b68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinText: {fileID: 1524301145304771697}
-  _coin: 0
   floatY: 0.5
   floatSpeed: 2
 --- !u!114 &4713239479897879919
@@ -22697,8 +22687,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169adab60109fe9448513d7212662b68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinText: {fileID: 1524301145304771697}
-  _coin: 0
   floatY: 0.5
   floatSpeed: 2
 --- !u!114 &4713239479917884479
@@ -22713,8 +22701,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169adab60109fe9448513d7212662b68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinText: {fileID: 1524301145304771697}
-  _coin: 0
   floatY: 0.5
   floatSpeed: 2
 --- !u!114 &4713239480042090184
@@ -22729,8 +22715,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169adab60109fe9448513d7212662b68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinText: {fileID: 1524301145304771697}
-  _coin: 0
   floatY: 0.5
   floatSpeed: 2
 --- !u!114 &4713239480095674417
@@ -22745,8 +22729,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169adab60109fe9448513d7212662b68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinText: {fileID: 1524301145304771697}
-  _coin: 0
   floatY: 0.5
   floatSpeed: 2
 --- !u!114 &4713239480252441041
@@ -22761,8 +22743,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169adab60109fe9448513d7212662b68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinText: {fileID: 1524301145304771697}
-  _coin: 0
   floatY: 0.5
   floatSpeed: 2
 --- !u!114 &4713239480267845109
@@ -22777,8 +22757,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169adab60109fe9448513d7212662b68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinText: {fileID: 1524301145304771697}
-  _coin: 0
   floatY: 0.5
   floatSpeed: 2
 --- !u!114 &4713239480479703650
@@ -22793,8 +22771,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169adab60109fe9448513d7212662b68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinText: {fileID: 1524301145304771697}
-  _coin: 0
   floatY: 0.5
   floatSpeed: 2
 --- !u!114 &4713239480568203926
@@ -22809,8 +22785,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169adab60109fe9448513d7212662b68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinText: {fileID: 1524301145304771697}
-  _coin: 0
   floatY: 0.5
   floatSpeed: 2
 --- !u!114 &4713239480724383121
@@ -22825,8 +22799,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169adab60109fe9448513d7212662b68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinText: {fileID: 1524301145304771697}
-  _coin: 0
   floatY: 0.5
   floatSpeed: 2
 --- !u!23 &4748621350381803375
@@ -22955,6 +22927,10 @@ PrefabInstance:
     - target: {fileID: 3092798570897144441, guid: dbf5e9efa3e5c9d4881ef7192b4c6016, type: 3}
       propertyPath: gravity
       value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092798570897144441, guid: dbf5e9efa3e5c9d4881ef7192b4c6016, type: 3}
+      propertyPath: z_speed
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 3092798570897144441, guid: dbf5e9efa3e5c9d4881ef7192b4c6016, type: 3}
       propertyPath: deadScreen
@@ -23628,7 +23604,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6702276216822411622, guid: a9659d97429d26e4b85e58a0a74d4751, type: 3}
       propertyPath: m_Speed
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6702276216822411622, guid: a9659d97429d26e4b85e58a0a74d4751, type: 3}
       propertyPath: m_Radius
@@ -24093,7 +24069,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9088011221879611189, guid: f50e8d0a66b674747bebf2cd308a7a03, type: 3}
       propertyPath: z_speed
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 9088011221879611189, guid: f50e8d0a66b674747bebf2cd308a7a03, type: 3}
       propertyPath: coinText
@@ -24563,7 +24539,7 @@ Transform:
   m_GameObject: {fileID: 7939107300742640611}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.78, y: -57.187046, z: 82.36}
+  m_LocalPosition: {x: 7.92, y: -57.187046, z: 82.36}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -25003,7 +24979,7 @@ GameObject:
   - component: {fileID: 3957410864280466918}
   - component: {fileID: 3967956113822132336}
   m_Layer: 5
-  m_Name: Level2
+  m_Name: Level3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25084,6 +25060,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1324668089612659105}
   - component: {fileID: 4679781206034794081}
+  - component: {fileID: 6838506076520851918}
   - component: {fileID: 1524301145304771697}
   m_Layer: 5
   m_Name: ScoreText
@@ -25092,6 +25069,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6838506076520851918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6838506076520851917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b915aa7c2cd08479d312432db66160, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinText: {fileID: 1524301145304771697}
 --- !u!224 &6913262197418980786
 RectTransform:
   m_ObjectHideFlags: 0
@@ -25475,6 +25465,10 @@ PrefabInstance:
     - target: {fileID: 7036352452877120996, guid: b50bcae0f94b1544190a399134a9041d, type: 3}
       propertyPath: m_TagString
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7290869915512693674, guid: b50bcae0f94b1544190a399134a9041d, type: 3}
+      propertyPath: m_Speed
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 7290869915512693674, guid: b50bcae0f94b1544190a399134a9041d, type: 3}
       propertyPath: m_Radius

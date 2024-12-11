@@ -3,7 +3,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController PlayerInstance;
@@ -12,7 +11,7 @@ public class PlayerController : MonoBehaviour
 
     [HideInInspector]
     public Animator anim;
-    public int desiredLane = 1; // 0: sol, 1: orta, 2: sað
+    int desiredLane = 1; // 0: sol, 1: orta, 2: sað
     public GameObject finishScreen;
     public GameObject deadScreen;
 
@@ -33,7 +32,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField, Range(0, 4)]
     float jump;
     public float gravity;
-    public bool isGrounded = false;
+    bool isGrounded = false;
     public bool isReady = false;
     float verticalVelocity;
 
@@ -107,7 +106,8 @@ public class PlayerController : MonoBehaviour
 
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
-            AudioManager.AudioManagerInstance.PlaySFX(AudioManager.AudioManagerInstance.jumpClip);
+            if (AudioManager.AudioManagerInstance !=null) 
+                AudioManager.AudioManagerInstance.PlaySFX(AudioManager.AudioManagerInstance.jumpClip);
             verticalVelocity = Mathf.Sqrt(jump * -2f * gravity);
             JumpAnimation();
         }
@@ -154,7 +154,8 @@ public class PlayerController : MonoBehaviour
         {            
             anim.SetBool("isRunning", false);
             z_speed = 0f;
-            AudioManager.AudioManagerInstance.PlaySFX(AudioManager.AudioManagerInstance.bumpClip);
+            if (AudioManager.AudioManagerInstance != null) 
+                AudioManager.AudioManagerInstance.PlaySFX(AudioManager.AudioManagerInstance.bumpClip);
             anim.SetTrigger("isDead");
             anim.SetInteger("DeadIndex", Random.Range(0, 4));            
             Invoke("DeadScreen", 2f);
