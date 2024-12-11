@@ -16,8 +16,38 @@ Karakterimiz, bölümlerde engellere çarpmadan ve NPC'lere geri kalmadan hedefe
  </ul>
 <b>Hedef:</b> Oyuncuların becerilerini test ederken, onları eğlenceli bir oyun deneyimine davet etmek. Oyuncular, bölümleri geçtikçe yeni içeriklerle karakterlerini özelleştirebilecek.
 
+<h3>Kullanılan Teknolojiler:</h3>
 
+<h4>1. Tasarım ve Yönetim:</h4>
+<ul>
+<li>Scriptable Object: Dinamik verilerin yönetiminde ve tekrar eden öğelerin düzenlenmesinde kullanıldı.</li>
+<li>Singleton Design Pattern: AudioManager ve GameManager gibi global nesnelerin kontrolünü sağlamak için kullanıldı.</li>
+</ul>
 
+<h4>2. Mekanik ve Sistemler:</h4>
+<ul>
+<li><b>Market Sistemi:</b> Coin biriktirme ve satın alma mekanikleriyle oyunun sürekliliği sağlandı.</li>
+<li><b>Scene Management:</b> sceneLoaded kullanılarak sahneler arası geçişler yönetildi.</li>
+<li><b>NavMesh Agent:</b> NPC'lerin hareket ve rota belirleme mekaniklerini optimize etmek için kullanıldı.</li>
+<li><b>PlayerPrefs:</b> Oyuncunun coin verileri ve diğer özelleştirme seçeneklerinin kaydedilmesi için tercih edildi.</li>
+</ul>
+
+<h4>3. Ses ve Görseller:</h4>
+<ul>
+<li><b>Audio Mixer:</b> Oyun müzikleri ve efektleri için ses seviyeleri kontrol edildi.</li>
+<li><b>Reflection Probe:</b> Dinamik yansıma efektleriyle görsel kalite artırıldı.</li>
+</ul>
+
+<h4>4. Prefablar ve Optimize Edilmiş Çalışma:</h4>
+<ul>
+<li><b>Prefab Sistemi:</b> Tekrar eden oyun nesneleri (coinler, engeller, patlamalar vb.) için kullanılarak hem bellek optimizasyonu hem de kolay düzenleme sağlandı.</li>
+</ul>
+
+<h4>5. Bonuslar:
+<ul>
+<li>Akrobasi hareketleri ve engeller için fizik tabanlı animasyonlar.</li>
+<li>Bölüm başına dinamik zorluk sistemi.</li>
+</ul>
 
  <hr>
  MainMenu:
